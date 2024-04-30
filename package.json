@@ -3,10 +3,19 @@
   "version": "0.5.0",
   "description": "Thrift grammar for tree-sitter",
   "main": "bindings/node",
+  "types": "bindings/node",
   "keywords": [
     "parser",
     "lexer",
     "thrift"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
   ],
   "author": "duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>",
   "contributors": [
@@ -18,12 +27,22 @@
   },
   "homepage": "https://github.com/duskmoon314/tree-sitter-thrift#readme",
   "dependencies": {
-    "nan": "^2.16.0"
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "eslint": "^8.32.0",
     "eslint-config-google": "^0.14.0",
-    "tree-sitter-cli": "0.20.8"
+    "tree-sitter-cli": "0.20.8",
+    "prebuildify": "^6.0.0"
   },
   "repository": "https://github.com/duskmoon314/tree-sitter-thrift",
   "scripts": {
@@ -31,7 +50,9 @@
     "lint": "eslint grammar.js",
     "parse": "tree-sitter parse",
     "test": "tree-sitter test && script/parse-examples",
-    "test-windows": "tree-sitter test"
+    "test-windows": "tree-sitter test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
   },
   "tree-sitter": [
     {
