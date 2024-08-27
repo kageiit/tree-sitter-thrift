@@ -3,8 +3,8 @@ name = "tree-sitter-thrift"
 description = "Thrift grammar for tree-sitter"
 version = "0.5.0"
 authors = [
-	"Amaan Qureshi <amaanq12@gmail.com>",
-	"duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>",
+  "Amaan Qureshi <amaanq12@gmail.com>",
+  "duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>",
 ]
 license = "MIT"
 readme = "bindings/rust/README.md"
@@ -24,4 +24,4 @@ path = "bindings/rust/lib.rs"
 tree-sitter = ">= 0.22"
 
 [build-dependencies]
-cc = "~1.0"
+cc = "1"
